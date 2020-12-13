@@ -18,8 +18,8 @@ do
   
   if [[ $CURRENT_BLOCK == $NEW_BLOCK ]]
   then
-    MSG="[$($(which date))] ${HOSTNAME} ${IP} | The block has not changed for ${SLEEP_SEC} seconds. Current block = ${CURRENT_BLOCK}"
-    echo -e ${RED}"${MSG}"${NORMAL}
+    MSG="${HOSTNAME} ${IP} | The block has not changed for ${SLEEP_SEC} seconds. Current block = ${CURRENT_BLOCK}"
+    echo -e ${RED}"[$($(which date))] | ${MSG}"${NORMAL}
     
     if [[ $TG_TOKEN != "" ]]
     then
