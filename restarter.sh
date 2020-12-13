@@ -3,7 +3,7 @@
 GREEN="\e[92m"
 RED="\e[91m"
 NORMAL="\e[39m"
-SLEEP_SEC=12
+SLEEP_SEC=18
 IP=$(curl -s 2ip.ru)
 TG_TOKEN=$1
 CHAT_ID=861331048
