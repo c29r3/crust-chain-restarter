@@ -3,10 +3,10 @@
 GREEN="\e[92m"
 RED="\e[91m"
 NORMAL="\e[39m"
-SLEEP_SEC=18
+SLEEP_SEC=30
 IP=$(curl -s 2ip.ru)
 TG_TOKEN=$1
-CHAT_ID=861331048
+CHAT_ID=$2
 SUBJECT="CRUST"
 
 while true
