@@ -21,7 +21,10 @@ do
     MSG="[$($(which date))] ${HOSTNAME} ${IP} | The block has not changed for ${SLEEP_SEC} seconds. Current block = ${CURRENT_BLOCK}"
     echo -e ${RED}"${MSG}"${NORMAL}
     
-    $(which curl) -s --header 'Content-Type: application/json' --request 'POST' --data "{\"chat_id\":\"${CHAT_ID}\",\"text\":\"${SUBJECT}\n${MSG}\"}" "https://api.telegram.org/bot${TOKEN}/sendMessage"
+    if [[ $TG_TOKEN != "" ]]
+    then
+      $(which curl) -s -H 'Content-Type: application/json' --request 'POST' -d "{\"chat_id\":\"${CHAT_ID}\",\"text\":\"${SUBJECT}\n${MSG}\"}" "https://api.telegram.org/bot${TG_TOKEN}/sendMessage"
+    fi
     
     $(which docker) restart crust crust-api
     sleep 60
