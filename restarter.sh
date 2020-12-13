@@ -27,6 +27,6 @@ do
     fi
     
     $(which docker) restart crust crust-api
-    sleep 60
+    sleep 120
   fi
 done
