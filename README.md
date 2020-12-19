@@ -35,7 +35,7 @@ tmux kill-session -t crust-restarter
 ```
 
 ### Ansible  
-If you are familiar with ansible, you can run the script at once on all the vorkers by one command  
+If you are familiar with ansible, you can run the script at once on all the workers by one command  
 ```bash
 ansible -i inventory.yml crust -f 25 -m shell -u root -a 'tmux new -s crust-restarter -d "curl -s https://raw.githubusercontent.com/c29r3/crust-chain-restarter/main/restarter.sh | bash -s -- "YOUR_BOT_TOKEN" YOUR_TG_ID"'
 ```
